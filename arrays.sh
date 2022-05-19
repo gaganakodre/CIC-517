@@ -34,6 +34,14 @@ function printArray(){
 
 value=''
 userInput=''
+choice=0
+read -p "length of array " arryLength
+TakeUserInput=''
+
+echo "1.add"
+echo "2.get"
+echo "3.update"
+echo "4.delete"
 read -p "length of array " arryLength
 TakeUserInput $arryLength
 printArray
