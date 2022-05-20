@@ -1,47 +1,10 @@
-#! /bin/bash -x
+#!/bin/bash -x
+declare -A myDictionary
 
-condition='false'
-trueCondition='value'
-echo "*****************************************"
-if [ $condition == 'item' ]
-then
-        echo "this is item"
-fi
-echo "*****************************************"
-if [ $condition == 'item' ]
-then
-        echo "this is item"
-else
-        echo "this is not item"
-fi
-echo "*****************************************"
-if [ $condition == 'item' ]
-then
-        echo "this is item"
-elif [ $condition == 'false' ]
-then
-        echo "the condition is false"
-else
-        echo "the conditon is not false"
-fi
-echo "*****************************************"
+myDictionary['contactnumber']=234567850
+myDictionary['name']='shreegowri'
+myDictionary['subjects']=['phy','maths','chemistry','biology']
 
-#nested if
-if [ $condition == 'true' ]
-then
-        echo "Condition is true "
-        if [ $trueCondition == 'value' ]
-        then
-                echo "Condition is value"
-        else
-                echo "Condition is not value"
-        fi
-else
-        echo "Condition is false "
-fi
-
-
-
-
-
-
+echo 'to print value for specific key' ${myDictionary['subject']}
+echo 'to priny all the values in the key ' ${!myDictionary[@]}
+echo 'to print all values ' ${myDictionary[@]}
